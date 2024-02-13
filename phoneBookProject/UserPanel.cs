@@ -11,42 +11,82 @@ namespace phoneBookProject
     {
         private Panel topPanel;
         private Button DeleteButton;
-        private Label UserName;
+        private Button EditButton;
+        private Label UserNameLabel;
+        private Label phoneLabel;
+
+        private Label name;
         private Label phone;
 
-        public UserPanel() {
+        public UserPanel(string userField, string userPhone) {
 
             Height = 100;
             Width = 450;
 
-            //topPanel = new Panel {
-            //    Parent = this,
-            //    BorderStyle = BorderStyle.Fixed3D,
-            //    Dock = DockStyle.Fill,
-            //};
-            //topPanel.Height = 100;
-            //topPanel.Width = 450;
-
-            UserName = new Label {
+            topPanel = new Panel
+            {
                 Parent = this,
+                BorderStyle = BorderStyle.FixedSingle,
                 Dock = DockStyle.Fill,
-                
+                Height = 100,
+                Width = 450
             };
 
-            phone = new Label {
-                Parent = this,
-                Dock = DockStyle.Fill,
-                Location = new Point(0, 54)
+            DeleteButton = new Button {
+                Parent = topPanel,
+                Location = new Point(292, 3),
+                Text = "Delete",
+                Height = 30
+
             };
 
-            DeleteButton = new Button { 
-                Parent = this,
-                Location = new Point(292, 3) 
+            EditButton = new Button
+            {
+                Parent = topPanel,
+                Location = new Point(292, 35),
+                Text = "Edit",
+                Height = 30
             };
+
+            UserNameLabel = new Label
+            {
+                Parent = topPanel,
+                Text = "Name",
+                Location = new Point(0, 10)
+            };
+
+            phoneLabel = new Label
+            {
+                Parent = topPanel,
+                Text = "phone",
+                Location = new Point(0, 50)
+            };
+
+
+            name = new Label
+            {
+                Parent = topPanel,
+                Text = userField,
+                Location = new Point(0, 30)
+            };
+
+            phone = new Label
+            {
+                Parent = topPanel,
+                Text = userPhone,
+                Location = new Point(0, 70)
+            };
+
+
+            DeleteButton.Click += DeleteUser_Click;
         }
 
-        public string Name { get => UserName.Text; set => UserName.Text = value; }
-        public string Phone { get => phone.Text; set => phone.Text = value; }
+        private void DeleteUser_Click(object sender, EventArgs e)
+        {
+            this.Parent?.Controls.Remove(this);
+        }
+        //public string Name { get => UserName.Text; set => UserName.Text = value; }
+        //public string Phone { get => phone.Text; set => phone.Text = value; }
     }
 
 }
