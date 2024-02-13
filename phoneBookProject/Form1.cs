@@ -5,12 +5,19 @@ namespace phoneBookProject
         public Form1()
         {
             InitializeComponent();
-            tableLayoutPanel1.Controls.Add(new UserPanel ("ILIA", "HE"));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var panel = new UserPanel("ILIA", "HE");
+
+            var panel = new UserPanel(nameBox.Text, phoneBox.Text,
+                new User(
+                    nameBox.Text,
+                    emailBox.Text,
+                    phoneBox.Text,
+                    lastNameBox.Text,
+                    aboutBox.Text
+                    ));
             tableLayoutPanel1.Controls.Add(panel);
         }
     }

@@ -17,8 +17,9 @@ namespace phoneBookProject
 
         private Label name;
         private Label phone;
+        private User user;
 
-        public UserPanel(string userField, string userPhone) {
+        public UserPanel(string userField, string userPhone, User user) {
 
             Height = 100;
             Width = 450;
@@ -61,7 +62,6 @@ namespace phoneBookProject
                 Text = "phone",
                 Location = new Point(0, 50)
             };
-
 
             name = new Label
             {
