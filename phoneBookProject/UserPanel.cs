@@ -77,8 +77,18 @@ namespace phoneBookProject
                 Location = new Point(0, 70)
             };
 
-
+            this.user = user;
             DeleteButton.Click += DeleteUser_Click;
+        }
+
+        public string getUserName()
+        {
+            return this.name.Text;
+        }
+
+        public string getUserPhone()
+        {
+            return this.phone.Text;
         }
 
         private void DeleteUser_Click(object sender, EventArgs e)
