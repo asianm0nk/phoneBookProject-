@@ -41,6 +41,10 @@
             label2 = new Label();
             label1 = new Label();
             emailBox = new TextBox();
+            button2 = new Button();
+            button3 = new Button();
+            textBoxSearch = new TextBox();
+            tableLayoutPanel_forSearch1 = new TableLayoutPanel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,12 +52,12 @@
             // 
             tableLayoutPanel1.AutoScroll = true;
             tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Location = new Point(274, 12);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.Location = new Point(274, 46);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(514, 426);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(514, 392);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // button1
@@ -62,7 +66,7 @@
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Text = "Create";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -164,11 +168,53 @@
             emailBox.Size = new Size(209, 27);
             emailBox.TabIndex = 5;
             // 
+            // button2
+            // 
+            button2.Location = new Point(525, 11);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 0;
+            button2.Text = "Search";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(625, 11);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 6;
+            button3.Text = "Filter";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.Location = new Point(310, 12);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(209, 27);
+            textBoxSearch.TabIndex = 12;
+            // 
+            // tableLayoutPanel_forSearch1
+            // 
+            tableLayoutPanel_forSearch1.AutoScroll = true;
+            tableLayoutPanel_forSearch1.ColumnCount = 1;
+            tableLayoutPanel_forSearch1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel_forSearch1.Location = new Point(810, 46);
+            tableLayoutPanel_forSearch1.Name = "tableLayoutPanel_forSearch1";
+            tableLayoutPanel_forSearch1.RowCount = 1;
+            tableLayoutPanel_forSearch1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel_forSearch1.Size = new Size(508, 386);
+            tableLayoutPanel_forSearch1.TabIndex = 1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1364, 450);
+            Controls.Add(tableLayoutPanel_forSearch1);
+            Controls.Add(textBoxSearch);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(panel1);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel1);
@@ -177,6 +223,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -194,5 +241,9 @@
         private Label label2;
         private Label label1;
         private TextBox emailBox;
+        private Button button2;
+        private Button button3;
+        private TextBox textBoxSearch;
+        private TableLayoutPanel tableLayoutPanel_forSearch1;
     }
 }
