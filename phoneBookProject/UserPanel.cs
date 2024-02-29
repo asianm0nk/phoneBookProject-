@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace phoneBookProject
         private Label phone;
         private User user;
 
-        public UserPanel(string userField, string userPhone, User user) {
+        public UserPanel(User user) {
 
             Height = 100;
             Width = 450;
@@ -66,37 +67,32 @@ namespace phoneBookProject
             name = new Label
             {
                 Parent = topPanel,
-                Text = userField,
+                Text = user.Name,
                 Location = new Point(0, 30)
             };
 
             phone = new Label
             {
                 Parent = topPanel,
-                Text = userPhone,
+                Text = user.Phone,
                 Location = new Point(0, 70)
             };
 
             this.user = user;
             DeleteButton.Click += DeleteUser_Click;
-        }
-
-        public string getUserName()
-        {
-            return this.name.Text;
-        }
-
-        public string getUserPhone()
-        {
-            return this.phone.Text;
+            EditButton.Click += EditUser_Click;
         }
 
         private void DeleteUser_Click(object sender, EventArgs e)
         {
-            this.Parent?.Controls.Remove(this);
+            Controller.deleteByID((Form1)this.Parent.Parent, user.Id);            
         }
-        //public string Name { get => UserName.Text; set => UserName.Text = value; }
-        //public string Phone { get => phone.Text; set => phone.Text = value; }
+
+        private void EditUser_Click(object sender, EventArgs e)
+        {
+            Controller.editById((Form1)this.Parent.Parent, user);               
+        }
+
     }
 
 }
