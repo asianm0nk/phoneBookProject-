@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace phoneBookProject
 {
-    internal class User
+    public class User
     {
-        public User(string name, string email, string phone, string lastName, string about)
+        public User(int id, string name, string email, string phone, string lastName, string about)
         {
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            Email = email ?? throw new ArgumentNullException(nameof(email));
-            Phone = phone ?? throw new ArgumentNullException(nameof(phone));
-            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
-            about = about ?? throw new ArgumentNullException(nameof(about));
+            this.Id = id;
+            this.about = about;
+            this.Name = name;
+            this.Email = email;
+            this.Phone = phone;
+            this.LastName = lastName;
         }
 
         public int Id;

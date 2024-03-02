@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
+            tablePanel = new TableLayoutPanel();
+            CreateBTN = new Button();
             nameBox = new TextBox();
             lastNameBox = new TextBox();
             phoneBox = new TextBox();
@@ -41,34 +41,34 @@
             label2 = new Label();
             label1 = new Label();
             emailBox = new TextBox();
-            button2 = new Button();
-            button3 = new Button();
+            SearchBTN = new Button();
             textBoxSearch = new TextBox();
-            tableLayoutPanel_forSearch1 = new TableLayoutPanel();
+            CancelBTN = new Button();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tablePanel
             // 
-            tableLayoutPanel1.AutoScroll = true;
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel1.Location = new Point(274, 46);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(514, 392);
-            tableLayoutPanel1.TabIndex = 0;
+            tablePanel.AutoScroll = true;
+            tablePanel.ColumnCount = 1;
+            tablePanel.ColumnStyles.Add(new ColumnStyle());
+            tablePanel.Location = new Point(274, 46);
+            tablePanel.Name = "tablePanel";
+            tablePanel.RowCount = 1;
+            tablePanel.RowStyles.Add(new RowStyle());
+            tablePanel.Size = new Size(514, 392);
+            tablePanel.TabIndex = 0;
             // 
-            // button1
+            // CreateBTN
             // 
-            button1.Location = new Point(78, 377);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "Create";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            CreateBTN.Location = new Point(31, 391);
+            CreateBTN.Name = "CreateBTN";
+            CreateBTN.Size = new Size(94, 29);
+            CreateBTN.TabIndex = 1;
+            CreateBTN.Text = "Create";
+            CreateBTN.UseVisualStyleBackColor = true;
+            CreateBTN.Click += CreateBTN_Click;
             // 
             // nameBox
             // 
@@ -168,24 +168,15 @@
             emailBox.Size = new Size(209, 27);
             emailBox.TabIndex = 5;
             // 
-            // button2
+            // SearchBTN
             // 
-            button2.Location = new Point(525, 11);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 0;
-            button2.Text = "Search";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(625, 11);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 6;
-            button3.Text = "Filter";
-            button3.UseVisualStyleBackColor = true;
+            SearchBTN.Location = new Point(525, 11);
+            SearchBTN.Name = "SearchBTN";
+            SearchBTN.Size = new Size(94, 29);
+            SearchBTN.TabIndex = 0;
+            SearchBTN.Text = "Search";
+            SearchBTN.UseVisualStyleBackColor = true;
+            SearchBTN.Click += SearchBTN_Click;
             // 
             // textBoxSearch
             // 
@@ -194,32 +185,40 @@
             textBoxSearch.Size = new Size(209, 27);
             textBoxSearch.TabIndex = 12;
             // 
-            // tableLayoutPanel_forSearch1
+            // CancelBTN
             // 
-            tableLayoutPanel_forSearch1.AutoScroll = true;
-            tableLayoutPanel_forSearch1.ColumnCount = 1;
-            tableLayoutPanel_forSearch1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel_forSearch1.Location = new Point(810, 46);
-            tableLayoutPanel_forSearch1.Name = "tableLayoutPanel_forSearch1";
-            tableLayoutPanel_forSearch1.RowCount = 1;
-            tableLayoutPanel_forSearch1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel_forSearch1.Size = new Size(508, 386);
-            tableLayoutPanel_forSearch1.TabIndex = 1;
+            CancelBTN.Location = new Point(146, 391);
+            CancelBTN.Name = "CancelBTN";
+            CancelBTN.Size = new Size(94, 29);
+            CancelBTN.TabIndex = 13;
+            CancelBTN.Text = "Cancel";
+            CancelBTN.UseVisualStyleBackColor = true;
+            CancelBTN.Click += CancelBTN_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Desc", "Asc" });
+            comboBox1.Location = new Point(625, 11);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 14;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1364, 450);
-            Controls.Add(tableLayoutPanel_forSearch1);
+            ClientSize = new Size(805, 524);
+            Controls.Add(comboBox1);
+            Controls.Add(CancelBTN);
             Controls.Add(textBoxSearch);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(SearchBTN);
             Controls.Add(panel1);
-            Controls.Add(button1);
-            Controls.Add(tableLayoutPanel1);
+            Controls.Add(CreateBTN);
+            Controls.Add(tablePanel);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -228,8 +227,8 @@
 
         #endregion
 
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private TableLayoutPanel tablePanel;
+        private Button CreateBTN;
         private TextBox nameBox;
         private TextBox lastNameBox;
         private TextBox phoneBox;
@@ -241,9 +240,9 @@
         private Label label2;
         private Label label1;
         private TextBox emailBox;
-        private Button button2;
-        private Button button3;
+        private Button SearchBTN;
         private TextBox textBoxSearch;
-        private TableLayoutPanel tableLayoutPanel_forSearch1;
+        private Button CancelBTN;
+        private ComboBox comboBox1;
     }
 }
